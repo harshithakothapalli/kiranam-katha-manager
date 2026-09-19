@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Dashboard - Kiranam Katha Manager
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <!-- ================================ -->
+        <!-- HEADER -->
+        <!-- ================================ -->
+
+        <header class="header">
+
+            <h1>
+                🏪 Kiranam Katha Manager
+            </h1>
+
+            <p>
+                Customer Katha Management
+            </p>
+
+        </header>
+
+
+        <!-- ================================ -->
+        <!-- MAIN -->
+        <!-- ================================ -->
+
+        <main class="main">
+
+
+            <!-- Dashboard Header -->
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <h2>
+                        Dashboard
+                    </h2>
+
+                    <p>
+                        Overview of your shop's katha
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="customersBtn"
+                    class="add-customer-btn"
+                >
+
+                    👥 Customers
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- DASHBOARD CARDS -->
+            <!-- ================================ -->
+
+            <div class="dashboard-cards">
+
+
+                <!-- Total Customers -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        👥
+                    </div>
+
+                    <p>
+                        Total Customers
+                    </p>
+
+                    <h2 id="totalCustomers">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <!-- Outstanding Katha -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        💰
+                    </div>
+
+                    <p>
+                        Total Outstanding Katha
+                    </p>
+
+                    <h2 id="totalKatha">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+                <!-- Today's Transactions -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        📝
+                    </div>
+
+                    <p>
+                        Today's Transactions
+                    </p>
+
+                    <h2 id="todayTransactions">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <!-- Today's Katha -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        ➕
+                    </div>
+
+                    <p>
+                        Today's Katha
+                    </p>
+
+                    <h2 id="todayKatha">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+                <!-- Today's Payments -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        💵
+                    </div>
+
+                    <p>
+                        Today's Payments
+                    </p>
+
+                    <h2 id="todayPayments">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- OUTSTANDING CUSTOMERS -->
+            <!-- ================================ -->
+
+            <section class="outstanding-section">
+
+
+                <div class="activity-header">
+
+                    <h2>
+                        Outstanding Customers
+                    </h2>
+
+                    <p>
+                        Customers who currently have katha
+                    </p>
+
+                </div>
+
+
+                <div class="customer-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Page
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Current Katha
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="outstandingCustomerList">
+
+                            <!-- Outstanding customers appear here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ================================ -->
+            <!-- TODAY'S ACTIVITY -->
+            <!-- ================================ -->
+
+            <section class="recent-activity">
+
+
+                <div class="activity-header">
+
+                    <h2>
+                        Today's Activity
+                    </h2>
+
+                    <p>
+                        Today's katha and payment transactions
+                    </p>
+
+                </div>
+
+
+                <div class="customer-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Description
+                                </th>
+
+                                <th>
+                                    Katha
+                                </th>
+
+                                <th>
+                                    Payment
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="todayActivityList">
+
+                            <!-- Today's activity appears here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ================================ -->
+            <!-- QUICK ACTIONS -->
+            <!-- ================================ -->
+
+            <section class="quick-actions">
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+
+                <button
+                    id="openCustomersBtn"
+                    class="add-customer-btn"
+                >
+
+                    👥 Manage Customers
+
+                </button>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- ================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================ -->
+
+    <script src="dashboard.js"></script>
+
+
+</body>
+
+</html>

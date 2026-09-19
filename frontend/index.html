@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Kiranam Katha Manager
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <!-- ================================ -->
+        <!-- HEADER -->
+        <!-- ================================ -->
+
+        <header class="header">
+
+            <h1>
+                🏪 Kiranam Katha Manager
+            </h1>
+
+            <p>
+                Customer Katha Management
+            </p>
+
+        </header>
+
+
+        <!-- ================================ -->
+        <!-- MAIN CONTENT -->
+        <!-- ================================ -->
+
+        <main class="main">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+    <div>
+
+        <h2>
+            Customer Index
+        </h2>
+
+        <p>
+            Manage your customers and their katha
+        </p>
+
+    </div>
+
+
+    <div class="page-actions">
+
+        <button
+            id="dashboardBtn"
+            class="dashboard-btn"
+        >
+
+            🏠 Dashboard
+
+        </button>
+
+
+        <button
+            id="addCustomerBtn"
+            class="add-customer-btn"
+        >
+
+            + Add Customer
+
+        </button>
+
+    </div>
+
+</div>
+
+            <!-- ================================ -->
+            <!-- SEARCH -->
+            <!-- ================================ -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchCustomer"
+                    placeholder="🔍 Search customer..."
+                >
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- CUSTOMER TABLE -->
+            <!-- ================================ -->
+
+            <div class="customer-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Page
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Current Katha
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="customerList">
+
+                        <!-- Customers will appear here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </main>
+
+
+        <!-- ================================ -->
+        <!-- ADD CUSTOMER MODAL -->
+        <!-- ================================ -->
+
+        <div
+            id="customerModal"
+            class="modal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h2>
+                        Add Customer
+                    </h2>
+
+
+                    <button
+                        id="closeModal"
+                        class="close-btn"
+                    >
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+                <form id="customerForm">
+
+
+                    <label>
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        required
+                    >
+
+
+                    <label>
+                        Page Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="pageNumber"
+                        placeholder="Enter page number"
+                        min="1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        Save Customer
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- EDIT CUSTOMER MODAL -->
+        <!-- ================================ -->
+
+        <div
+            id="editCustomerModal"
+            class="modal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h2>
+                        Edit Customer
+                    </h2>
+
+
+                    <button
+                        id="closeEditCustomerModal"
+                        class="close-btn"
+                    >
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+                <form id="editCustomerForm">
+
+
+                    <label>
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editCustomerName"
+                        placeholder="Enter customer name"
+                        required
+                    >
+
+
+                    <label>
+                        Page Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="editPageNumber"
+                        placeholder="Enter page number"
+                        min="1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        Save Changes
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================ -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

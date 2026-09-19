@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Customer Ledger - Kiranam Katha Manager
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <!-- ================================ -->
+        <!-- HEADER -->
+        <!-- ================================ -->
+
+        <header class="header">
+
+            <h1>
+                🏪 Kiranam Katha Manager
+            </h1>
+
+            <p>
+                Customer Katha Management
+            </p>
+
+        </header>
+
+
+        <!-- ================================ -->
+        <!-- MAIN -->
+        <!-- ================================ -->
+
+        <main class="main">
+
+
+            <!-- ================================ -->
+            <!-- LEDGER NAVIGATION -->
+            <!-- ================================ -->
+
+            <div class="ledger-navigation">
+
+                <button
+                    id="dashboardBtn"
+                    class="dashboard-btn"
+                >
+
+                    🏠 Dashboard
+
+                </button>
+
+
+                <button
+                    id="backBtn"
+                    class="back-btn"
+                >
+
+                    ← Customers
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- CUSTOMER HEADER -->
+            <!-- ================================ -->
+
+            <div class="ledger-header">
+
+                <div>
+
+                    <h2 id="customerName">
+                        Customer
+                    </h2>
+
+                    <p>
+                        Page:
+                        <span id="customerPage"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- BALANCE -->
+            <!-- ================================ -->
+
+            <div class="balance-card">
+
+                <p>
+                    Current Katha
+                </p>
+
+                <h2>
+                    ₹<span id="currentBalance">0</span>
+                </h2>
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- ACTION BUTTONS -->
+            <!-- ================================ -->
+
+            <div class="ledger-actions">
+
+                <button
+                    id="addKathaBtn"
+                    class="add-customer-btn"
+                >
+
+                    + Add Katha
+
+                </button>
+
+
+                <button
+                    id="addPaymentBtn"
+                    class="payment-btn"
+                >
+
+                    💰 Add Payment
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================ -->
+            <!-- TRANSACTION TABLE -->
+            <!-- ================================ -->
+
+            <div class="customer-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Description
+                            </th>
+
+                            <th>
+                                Katha
+                            </th>
+
+                            <th>
+                                Payment
+                            </th>
+
+                            <th>
+                                Balance
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transactionList">
+
+                        <!-- Transactions appear here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </main>
+
+
+        <!-- ================================ -->
+        <!-- ADD KATHA MODAL -->
+        <!-- ================================ -->
+
+        <div
+            id="kathaModal"
+            class="modal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h2>
+                        Add Katha
+                    </h2>
+
+
+                    <button
+                        id="closeKathaModal"
+                        class="close-btn"
+                    >
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+                <form id="kathaForm">
+
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="kathaDate"
+                        required
+                    >
+
+
+                    <label>
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kathaDescription"
+                        placeholder="Example: Rice, Oil, Sugar"
+                        required
+                    >
+
+
+                    <label>
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="kathaAmount"
+                        placeholder="Enter amount"
+                        min="1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        Save Katha
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- PAYMENT MODAL -->
+        <!-- ================================ -->
+
+        <div
+            id="paymentModal"
+            class="modal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h2>
+                        Add Payment
+                    </h2>
+
+
+                    <button
+                        id="closePaymentModal"
+                        class="close-btn"
+                    >
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+                <form id="paymentForm">
+
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="paymentDate"
+                        required
+                    >
+
+
+                    <label>
+                        Payment Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="paymentAmount"
+                        placeholder="Enter payment amount"
+                        min="1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        Save Payment
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- EDIT TRANSACTION MODAL -->
+        <!-- ================================ -->
+
+        <div
+            id="editModal"
+            class="modal"
+        >
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h2>
+                        Edit Transaction
+                    </h2>
+
+
+                    <button
+                        id="closeEditModal"
+                        class="close-btn"
+                    >
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+                <form id="editForm">
+
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="editDate"
+                        required
+                    >
+
+
+                    <div id="editDescriptionGroup">
+
+                        <label>
+                            Description
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editDescription"
+                            placeholder="Enter description"
+                        >
+
+                    </div>
+
+
+                    <label>
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="editAmount"
+                        placeholder="Enter amount"
+                        min="1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+
+                        Save Changes
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================ -->
+
+    <script src="ledger.js"></script>
+
+
+</body>
+
+</html>
